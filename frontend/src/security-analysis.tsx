@@ -109,7 +109,7 @@ export default function SecurityAnalysis() {
     // Simulate analysis process (7 seconds)
     setTimeout(() => {
       setFormState('finished')
-    }, 7000)
+    }, 60000)
   }
 
   const handleDownload = () => {
@@ -297,7 +297,7 @@ export default function SecurityAnalysis() {
                   <motion.div
                     className="w-2 h-2 bg-green-500 rounded-full"
                     animate={{ scale: [1, 1.2, 1] }}
-                    transition={{ duration: 1, repeat: Infinity, delay: 0.2 }}
+                    transition={{ duration: 1, repeat: Infinity, delay: 0.20 }}
                   />
                   <motion.div
                     className="w-2 h-2 bg-green-500 rounded-full"
@@ -386,7 +386,7 @@ export default function SecurityAnalysis() {
                   className="bg-gradient-to-r from-green-500 to-green-400 h-2 rounded-full shadow-sm"
                   initial={{ width: "0%" }}
                   animate={{ width: "100%" }}
-                  transition={{ duration: 7, ease: "easeInOut" }}
+                  transition={{ duration: 60, ease: "easeInOut" }}
                 />
               </div>
             </div>
