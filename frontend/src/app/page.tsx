@@ -33,28 +33,27 @@ export default function Home() {
           <div className="text-center max-w-5xl mx-auto">
             {/* Main heading */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-green-400 mb-6 leading-tight animate-fade-in">
-              Onde a Inteligência Artificial se Torna sua{' '}
+              O Copiloto de IA para Profissionais de{' '}
               <span className="bg-gradient-to-r from-green-300 to-emerald-300 bg-clip-text text-transparent">
-                Linha de Frente
-              </span>{' '}
-              na Defesa.
+                Cibersegurança
+              </span>
             </h1>
 
             {/* Subheading */}
             <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-green-400 mb-12 leading-relaxed max-w-4xl mx-auto animate-fade-in-delay">
-              AI Defense Orchestra: Automatize, antecipe e neutralize ameaças antes que elas aconteçam.
+              CyberOps Copilot: Automatize varreduras, enriqueça análises e gere relatórios inteligentes em uma fração do tempo.
             </h2>
 
             {/* Optional CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in-delay-2">
               <Link href="/page2">
                 <button className="px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold rounded-lg hover:from-green-700 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-                  Começar Agora
+                  Iniciar Análise
                 </button>
               </Link>
               <Link href="/page2">
                 <button className="px-8 py-4 border border-green-600 text-green-300 font-semibold rounded-lg hover:border-green-500 hover:text-white transition-all duration-300 transform hover:scale-105">
-                  Saiba Mais
+                  Ver Funcionalidades
                 </button>
                 </Link>
             </div>
@@ -63,7 +62,7 @@ export default function Home() {
           {/* Scroll indicator */}
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
             <div className="flex flex-col items-center text-green-400 hover:text-green-300 transition-colors duration-300 cursor-pointer">
-              <span className="text-sm mb-2 font-medium">Role para baixo</span>
+              <span className="text-sm mb-2 font-medium">Conheça a plataforma</span>
               <ChevronDown className="w-6 h-6 animate-pulse text-green-400" />
             </div>
           </div>
@@ -76,9 +75,9 @@ export default function Home() {
           {/* Section Title */}
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight animate-on-scroll">
-              A cibersegurança tradicional não acompanha a{' '}
+              O trabalho manual em cibersegurança limita a{' '}
               <span className="bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
-                velocidade das ameaças
+                escala e a agilidade
               </span>.
             </h2>
           </div>
@@ -87,39 +86,39 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Column - Text Blocks */}
             <div className="space-y-8">
-              {/* Custos Elevados */}
+              {/* Tarefas Repetitivas */}
               <div className="animate-on-scroll-delay-1 bg-slate-900/50 p-6 rounded-lg border border-slate-800 hover:border-slate-700 transition-colors duration-300">
                 <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center">
                   <div className="w-2 h-2 bg-red-500 rounded-full mr-3"></div>
-                  Custos Elevados
+                  Tarefas Repetitivas
                 </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  Soluções tradicionais exigem grandes equipes especializadas e infraestrutura complexa, 
-                  gerando custos operacionais que crescem exponencialmente com a escala.
+                  Profissionais gastam horas em varreduras de rotina, configuração de ferramentas e coleta de dados, 
+                  tempo que poderia ser usado em análises estratégicas de maior impacto.
                 </p>
               </div>
 
-              {/* Fadiga de Alertas */}
+              {/* Análise Desarticulada */}
               <div className="animate-on-scroll-delay-2 bg-slate-900/50 p-6 rounded-lg border border-slate-800 hover:border-slate-700 transition-colors duration-300">
                 <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center">
                   <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                  Fadiga de Alertas
+                  Análise Desarticulada
                 </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  Milhares de falsos positivos sobrecarregam as equipes de segurança, 
-                  causando burnout e reduzindo a eficácia na detecção de ameaças reais.
+                  Gerenciar múltiplas ferramentas gera uma sobrecarga de dados brutos e alertas. Correlacionar essas informações manualmente 
+                  é um processo lento e sujeito a erros.
                 </p>
               </div>
 
-              {/* Janela de Exposição */}
+              {/* Relatórios Manuais */}
               <div className="animate-on-scroll-delay-3 bg-slate-900/50 p-6 rounded-lg border border-slate-800 hover:border-slate-700 transition-colors duration-300">
                 <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center">
                   <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
-                  Janela de Exposição
+                  Relatórios Manuais
                 </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  O tempo entre detecção e resposta permite que atacantes se movam lateralmente, 
-                  causando danos irreversíveis antes da contenção.
+                  A criação de relatórios técnicos e executivos consome um tempo valioso. Formatar, priorizar e explicar 
+                  vulnerabilidades de forma clara é um desafio constante.
                 </p>
               </div>
             </div>
@@ -142,10 +141,10 @@ export default function Home() {
                     <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-orange-500 rounded-full animate-pulse"></div>
                   </div>
                   <p className="text-gray-400 text-sm">
-                    Visualização Conceitual
+                    Workflow Manual
                   </p>
                   <p className="text-gray-500 text-xs mt-1">
-                    Ameaças em Tempo Real
+                    Processo Lento e Fragmentado
                   </p>
                 </div>
               </div>
@@ -162,11 +161,11 @@ export default function Home() {
             <div className="lg:sticky lg:top-0 lg:h-screen flex items-center justify-center p-8 lg:p-16">
               <div className="text-center lg:text-left">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                  Nossa{' '}
+                  Apresentando a{' '}
                   <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                    Orquestra de IA
+                    Análise Aumentada por IA
                   </span>
-                  : Precisão, Coordenação e Inteligência.
+                  : Seu Novo Workflow.
                 </h2>
               </div>
             </div>
@@ -188,12 +187,12 @@ export default function Home() {
                         1
                       </div>
                       <h3 className="text-2xl sm:text-3xl font-bold text-white">
-                        Criamos sua Equipe de Elite.
+                        Defina o Escopo da Análise.
                       </h3>
                     </div>
                     <p className="text-gray-300 text-lg leading-relaxed mb-8">
-                      Nossa IA recruta e treina especialistas virtuais em diferentes domínios de segurança, 
-                      cada um com expertise específica em detecção, análise e resposta a ameaças.
+                      Forneça os alvos (IPs, URLs) e selecione os tipos de verificação. Nossa IA designa agentes especializados 
+                      para cada tarefa, desde análise de vulnerabilidades web até testes de força bruta em SSH.
                     </p>
                     
                     {/* Visual Placeholder */}
@@ -205,7 +204,7 @@ export default function Home() {
                         <div className="w-16 h-16 bg-purple-500/20 rounded-full border border-purple-500/40 animate-pulse delay-700"></div>
                       </div>
                       <div className="absolute bottom-4 right-4 text-xs text-gray-500">
-                        Equipe de IA Especializada
+                        Configuração de Agentes
                       </div>
                     </div>
                   </div>
@@ -227,12 +226,12 @@ export default function Home() {
                         2
                       </div>
                       <h3 className="text-2xl sm:text-3xl font-bold text-white">
-                        O Maestro entra em Ação.
+                        Orquestre a Execução.
                       </h3>
                     </div>
                     <p className="text-gray-300 text-lg leading-relaxed mb-8">
-                      Um sistema central coordena toda a orquestra, distribuindo tarefas, 
-                      sincronizando análises e garantindo que cada especialista trabalhe em harmonia perfeita.
+                      O CrewAI atua como um maestro, coordenando os agentes para que trabalhem em paralelo, 
+                      compartilhem informações e executem os testes de forma otimizada e sem sobreposição.
                     </p>
                     
                     {/* Visual Placeholder */}
@@ -250,7 +249,7 @@ export default function Home() {
                         </div>
                       </div>
                       <div className="absolute bottom-4 right-4 text-xs text-gray-500">
-                        Coordenação Central
+                        Execução Coordenada
                       </div>
                     </div>
                   </div>
@@ -272,12 +271,12 @@ export default function Home() {
                         3
                       </div>
                       <h3 className="text-2xl sm:text-3xl font-bold text-white">
-                        A Simulação de Defesa Começa.
+                        Colete Dados Brutos.
                       </h3>
                     </div>
                     <p className="text-gray-300 text-lg leading-relaxed mb-8">
-                      Cada agente de IA simula cenários de ataque em tempo real, 
-                      testando defesas e identificando vulnerabilidades antes que sejam exploradas.
+                      A plataforma executa as ferramentas de mercado (Nmap, Metasploit, etc.) de forma automatizada, 
+                      coletando todos os outputs e logs brutos para análise centralizada.
                     </p>
                     
                     {/* Visual Placeholder */}
@@ -293,7 +292,7 @@ export default function Home() {
                         ))}
                       </div>
                       <div className="absolute bottom-4 right-4 text-xs text-gray-500">
-                        Simulação Ativa
+                        Coleta Automatizada
                       </div>
                     </div>
                   </div>
@@ -315,12 +314,12 @@ export default function Home() {
                         4
                       </div>
                       <h3 className="text-2xl sm:text-3xl font-bold text-white">
-                        De Ruído a Relatórios Acionáveis.
+                        Receba Relatórios Inteligentes.
                       </h3>
                     </div>
                     <p className="text-gray-300 text-lg leading-relaxed mb-8">
-                      Transformamos milhares de alertas em insights precisos e recomendações claras, 
-                      eliminando falsos positivos e priorizando ameaças reais.
+                      Um agente de IA especializado em redação técnica analisa os dados coletados, prioriza as vulnerabilidades, 
+                      explica os riscos e gera um relatório profissional pronto para ser entregue ao cliente.
                     </p>
                     
                     {/* Visual Placeholder */}
@@ -333,7 +332,7 @@ export default function Home() {
                         <div className="h-6 bg-gradient-to-r from-orange-500 to-red-500 rounded animate-pulse delay-600"></div>
                       </div>
                       <div className="absolute bottom-4 right-4 text-xs text-gray-500">
-                        Relatórios Inteligentes
+                        Geração de Relatório
                       </div>
                     </div>
                   </div>
@@ -356,10 +355,10 @@ export default function Home() {
               viewport={{ once: true, amount: 0.3 }}
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight"
             >
-              O que sua empresa ganha com uma{' '}
+              Potencialize sua expertise com a{' '}
               <span className="bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent">
-                Orquestra de Defesa
-              </span>?
+                Inteligência Aumentada
+              </span>
             </motion.h2>
           </div>
 
@@ -379,11 +378,11 @@ export default function Home() {
               </div>
               
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">
-                Redução Drástica de Custos
+                Acelere seu Workflow
               </h3>
               <p className="text-gray-300 leading-relaxed">
-                Elimine a necessidade de grandes equipes especializadas. Nossa IA automatiza 90% das tarefas de segurança, 
-                reduzindo custos operacionais em até 70% enquanto aumenta a eficácia.
+                Reduza em até 80% o tempo gasto em tarefas manuais e repetitivas. Dedique seu tempo e conhecimento 
+                à análise estratégica e à tomada de decisões críticas.
               </p>
             </motion.div>
 
@@ -401,11 +400,11 @@ export default function Home() {
               </div>
               
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">
-                Velocidade de Detecção 10x Maior
+                Aumente a Abrangência
               </h3>
               <p className="text-gray-300 leading-relaxed">
-                De horas para segundos. Nossa orquestra de IA identifica e responde a ameaças em tempo real, 
-                fechando janelas de exposição antes que danos sejam causados.
+                Execute dezenas de testes em paralelo e de forma consistente. Garanta uma cobertura de análise 
+                muito mais ampla do que seria viável manualmente em um mesmo prazo.
               </p>
             </motion.div>
 
@@ -423,11 +422,11 @@ export default function Home() {
               </div>
               
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">
-                Inteligência, Não Apenas Dados
+                Entregue Relatórios Superiores
               </h3>
               <p className="text-gray-300 leading-relaxed">
-                Transformamos o caos de alertas em insights acionáveis. Receba apenas o que importa, 
-                com contexto completo e recomendações precisas para cada situação.
+                Gere automaticamente relatórios técnicos detalhados e sumários executivos claros e concisos. 
+                Impressione seus clientes e stakeholders com a qualidade e a rapidez da entrega.
               </p>
             </motion.div>
           </div>
@@ -572,14 +571,14 @@ export default function Home() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
               Pronto para{' '}
               <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
-                revolucionar
+                elevar seu nível
               </span>{' '}
-              sua segurança?
+              de análise?
             </h1>
             
             <p className="text-xl sm:text-2xl text-gray-300 mb-12 leading-relaxed max-w-3xl mx-auto">
-              Descubra como nossa Orquestra de IA pode transformar sua postura de segurança em questão de semanas, 
-              não meses. Comece com uma simulação personalizada para sua empresa.
+              Experimente como o CyberOps Copilot pode transformar seu workflow. 
+              Comece a automatizar suas análises hoje mesmo e entregue resultados mais rápidos e precisos.
             </p>
             
             <Link href="/page2">
@@ -591,7 +590,7 @@ export default function Home() {
                   boxShadow: '0 10px 30px rgba(34, 197, 94, 0.3)'
                 }}
               >
-                Iniciar Simulação de Segurança
+                Acessar a Plataforma
               </motion.button>
             </Link>
           </motion.div>
