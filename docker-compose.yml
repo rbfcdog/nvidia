@@ -1,0 +1,49 @@
+services:
+  # Serviço do RabbitMQ para a fila de mensagens
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: rabbitmq
+    hostname: rabbitmq
+    ports:
+      - "5672:5672"  # Porta para a aplicação
+      - "15672:15672" # Porta para a interface de gerenciamento web
+    environment:
+      - RABBITMQ_DEFAULT_USER=user
+      - RABBITMQ_DEFAULT_PASS=password
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Serviço do Backend (API FastAPI)
+  backend:
+    build: ./backend
+    container_name: backend-api
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mapeia o código local para dentro do container para live-reload
+      - ./backend:/app
+    env_file:
+      - ./backend/.env
+    depends_on:
+      rabbitmq:
+        condition: service_healthy # Espera o RabbitMQ estar saudável antes de iniciar
+
+  # Serviço do Frontend (Aplicação Next.js)
+  frontend:
+    build: ./frontend
+    container_name: frontend-app
+    ports:
+      - "3000:3000"
+    volumes:
+      # Mapeia o código local para dentro do container para live-reload
+      - ./frontend:/app
+      # Impede que o node_modules local sobrescreva o do container
+      - /app/node_modules
+    environment:
+      # Garante que o Next.js perceba mudanças nos arquivos
+      - WATCHPACK_POLLING=true
+    depends_on:
+      - backend

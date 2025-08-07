@@ -55,7 +55,7 @@ export default function SecurityAnalysis() {
     });
   
     try {
-      // Simulação de sucesso com um PDF fake
+      /*/ Simulação de sucesso com um PDF fake
       console.log("Simulando upload e análise dos arquivos...");
       await new Promise(resolve => setTimeout(resolve, 5000)); // Simula 5s de processamento
 
@@ -66,10 +66,9 @@ export default function SecurityAnalysis() {
       
       console.log("Simulação bem-sucedida! Relatório gerado.");
       setFormState('finished');
-
-      /*
+      */
       // CÓDIGO REAL PARA QUANDO O BACKEND ESTIVER PRONTO
-      const response = await fetch("/api/v1/analyze-files", {
+      const response = await fetch("https://localhost:8000/scan_service/save_text_files", {
         method: "POST",
         // IMPORTANTE: NÃO defina o header 'Content-Type', o navegador faz isso por você com FormData
         body: formData
@@ -85,7 +84,7 @@ export default function SecurityAnalysis() {
       
       console.log("Análise concluída com sucesso! Relatório pronto para download.");
       setFormState('finished');
-      */
+    
   
     } catch (error) {
       console.error("Falha ao enviar os arquivos:", error);
