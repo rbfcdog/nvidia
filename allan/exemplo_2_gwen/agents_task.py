@@ -23,7 +23,7 @@ task_recon = Task(
     """,
     expected_output="A file named 'recon_raw_output.txt' containing the complete Nmap output.",
     agent=executor_agent,
-    output_file="outputs/recon_raw_output.txt"
+    output_file="outputs/recon_raxw_output.txt"
 )
 
 analyst_agent = Agent(

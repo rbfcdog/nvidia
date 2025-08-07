@@ -18,7 +18,7 @@ crew = Crew(
     ],
     process=Process.sequential,  # Ensure order: scan → analyze → specialize → compile
     llm=llm,
-    verbose=2
+    verbose=True
 )
 
 # Execute the crew
