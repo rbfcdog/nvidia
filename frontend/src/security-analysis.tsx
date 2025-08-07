@@ -68,7 +68,7 @@ export default function SecurityAnalysis() {
       setFormState('finished');
       */
       // CÓDIGO REAL PARA QUANDO O BACKEND ESTIVER PRONTO
-      const response = await fetch("https://localhost:8000/scan_service/save_text_files", {
+      const response = await fetch("http://localhost:8000/api/v1/scan/compile-texts", {
         method: "POST",
         // IMPORTANTE: NÃO defina o header 'Content-Type', o navegador faz isso por você com FormData
         body: formData
