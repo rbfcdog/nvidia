@@ -1,0 +1,64 @@
+```json
+[
+  {
+    "id": 1,
+    "type": "network",
+    "port": 22,
+    "service": "SSH",
+    "version": "OpenSSH 8.2p1",
+    "finding": "SSH service running with default configuration",
+    "evidence": "Port 22/tcp open ssh OpenSSH 8.2p1",
+    "risk_severity_hint": "medium"
+  },
+  {
+    "id": 2,
+    "type": "web",
+    "port": 80,
+    "service": "HTTP",
+    "version": "Apache 2.4.41",
+    "finding": "Web server exposing server version in HTTP headers",
+    "evidence": "Server: Apache/2.4.41 (Ubuntu)",
+    "risk_severity_hint": "low"
+  },
+  {
+    "id": 3,
+    "type": "network",
+    "port": 445,
+    "service": "SMB",
+    "version": "Samba 4.11.13",
+    "finding": "SMB service vulnerable to EternalBlue (MS17-010)",
+    "evidence": "SMBv1 supported (dangerous!)",
+    "risk_severity_hint": "critical"
+  },
+  {
+    "id": 4,
+    "type": "infrastructure",
+    "port": 53,
+    "service": "DNS",
+    "version": "Bind 9.16.1",
+    "finding": "DNS server allowing zone transfers",
+    "evidence": "AXFR request successful for domain.com",
+    "risk_severity_hint": "high"
+  },
+  {
+    "id": 5,
+    "type": "system",
+    "port": null,
+    "service": "Linux Kernel",
+    "version": "5.4.0-80-generic",
+    "finding": "Outdated kernel missing security patches",
+    "evidence": "Linux 5.4.0-80-generic #90-Ubuntu SMP Fri Jul 9 22:49:44 UTC 2021 x86_64",
+    "risk_severity_hint": "medium"
+  },
+  {
+    "id": 6,
+    "type": "network",
+    "port": 21,
+    "service": "FTP",
+    "version": "vsftpd 3.0.3",
+    "finding": "FTP service allowing anonymous login",
+    "evidence": "331 Please specify the password.\n230 Login successful.",
+    "risk_severity_hint": "high"
+  }
+]
+```

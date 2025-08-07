@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NessusClientData_v2>
+<Policy>
+<policyName>Basic Network Scan</policyName>
+<policyComments>Sample Nessus scan for demonstration</policyComments>
+</Policy>
+
+<Report name="Sample Security Report">
+<ReportHost name="webserver.example.com">
+<HostProperties>
+<tag name="host-ip">192.168.1.100</tag>
+<tag name="host-fqdn">webserver.example.com</tag>
+<tag name="operating-system">Linux Kernel 3.10</tag>
+<tag name="system-type">general-purpose</tag>
+</HostProperties>
+
+<ReportItem port="80" svc_name="http" protocol="tcp" severity="2" pluginID="11219" pluginName="Web Server Detection">
+<agent>localhost</agent>
+<description>The remote web server type and version were identified.</description>
+<fname>www_fingerprinting.nasl</fname>
+<plugin_modification_date>2023/12/05</plugin_modification_date>
+<plugin_name>Web Server Detection</plugin_name>
+<plugin_publication_date>2000/06/09</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>1.45</script_version>
+<synopsis>A web server is running on the remote host.</synopsis>
+<plugin_output>Server: Apache/2.4.6 (CentOS)</plugin_output>
+</ReportItem>
+
+<ReportItem port="80" svc_name="http" protocol="tcp" severity="3" pluginID="10107" pluginName="HTTP Server Type and Version">
+<agent>localhost</agent>
+<description>It is possible to obtain information about the remote HTTP server by sending a malformed request.</description>
+<risk_factor>Low</risk_factor>
+<synopsis>Information about the remote HTTP server can be obtained.</synopsis>
+<solution>Modify the HTTP server's configuration to limit the amount of information disclosed.</solution>
+<plugin_output>
+The remote HTTP server type is:
+Apache/2.4.6 (CentOS)
+
+This may help an attacker identify known vulnerabilities or attack vectors specific to this version.
+</plugin_output>
+</ReportItem>
+
+<ReportItem port="443" svc_name="https" protocol="tcp" severity="2" pluginID="57582" pluginName="SSL Certificate Cannot Be Trusted">
+<agent>localhost</agent>
+<description>The server's X.509 certificate cannot be trusted.</description>
+<risk_factor>Medium</risk_factor>
+<synopsis>The SSL certificate for this service cannot be trusted.</synopsis>
+<solution>Purchase or generate a proper certificate for this service.</solution>
+<plugin_output>
+The following issues were identified:
+
+- The certificate has expired.
+  Certificate expired on Jan 01 2024.
+  Current time: Aug 07 2025.
+
+- The certificate is self-signed.
+</plugin_output>
+</ReportItem>
+
+<ReportItem port="3306" svc_name="mysql" protocol="tcp" severity="3" pluginID="10719" pluginName="MySQL Server Detection">
+<agent>localhost</agent>
+<description>A MySQL server is listening on the remote port.</description>
+<risk_factor>Medium</risk_factor>
+<synopsis>A database server is listening on the remote host.</synopsis>
+<solution>If this service is not needed, disable it or filter incoming traffic to this port.</solution>
+<plugin_output>
+A MySQL server is running on this port.
+
+Version: 5.7.26
+Protocol: 10
+
+This version may contain known vulnerabilities.
+</plugin_output>
+</ReportItem>
+
+<ReportItem port="3306" svc_name="mysql" protocol="tcp" severity="4" pluginID="57608" pluginName="MySQL Root Account Accessible">
+<agent>localhost</agent>
+<cve>CVE-2016-6662</cve>
+<cvss_base_score>10.0</cvss_base_score>
+<description>The remote MySQL server has an account with no password set.</description>
+<risk_factor>Critical</risk_factor>
+<synopsis>The remote database server can be accessed without authentication.</synopsis>
+<solution>Set a password for the MySQL root account and restrict remote access.</solution>
+<plugin_output>
+It was possible to connect to the remote MySQL server using the 'root' account without providing any password.
+
+This represents a serious security vulnerability as anyone can connect to the database and perform administrative operations.
+
+Recommendation:
+1. Set a strong password for the root account
+2. Disable remote root access
+3. Create specific user accounts with limited privileges
+4. Enable MySQL logging and monitoring
+</plugin_output>
+</ReportItem>
+
+</ReportHost>
+
+<ReportHost name="fileserver.example.com">
+<HostProperties>
+<tag name="host-ip">192.168.1.101</tag>
+<tag name="host-fqdn">fileserver.example.com</tag>
+<tag name="operating-system">Linux Kernel 4.18</tag>
+<tag name="system-type">general-purpose</tag>
+</HostProperties>
+
+<ReportItem port="21" svc_name="ftp" protocol="tcp" severity="3" pluginID="11002" pluginName="FTP Anonymous Login">
+<agent>localhost</agent>
+<description>This FTP service allows anonymous logins.</description>
+<risk_factor>Medium</risk_factor>
+<synopsis>The remote FTP server allows anonymous access.</synopsis>
+<solution>Disable anonymous access if it is not required.</solution>
+<plugin_output>
+The remote FTP server allows anonymous access.
+
+Furthermore, the anonymous user has write permissions in the 'uploads' directory, which could allow attackers to:
+- Upload malicious files
+- Use the server for storing illegal content
+- Pivot attacks to other systems
+
+Anonymous FTP should be disabled unless specifically required.
+</plugin_output>
+</ReportItem>
+
+<ReportItem port="445" svc_name="cifs" protocol="tcp" severity="2" pluginID="10394" pluginName="SMB Signing Disabled">
+<agent>localhost</agent>
+<description>Signing is not required on the remote SMB server.</description>
+<risk_factor>Low</risk_factor>
+<synopsis>The remote SMB server does not require signing.</synopsis>
+<solution>Enable SMB signing in the server configuration.</solution>
+<plugin_output>
+The remote SMB server does not require SMB signing. This can allow man-in-the-middle attacks against the SMB server.
+
+Note that this plugin only checks if SMB signing is required, not if SMB signing is supported.
+</plugin_output>
+</ReportItem>
+
+</ReportHost>
+
+</Report>
+</NessusClientData_v2>

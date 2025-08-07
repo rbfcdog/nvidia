@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Analysis Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔒 Security Analysis Tool</h1>
+            <p>Upload your security scan files for automated analysis</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div id="drop-zone" class="drop-zone">
+                    <div class="drop-zone-content">
+                        <i class="upload-icon">📁</i>
+                        <h3>Drag & Drop Files Here</h3>
+                        <p>or <button type="button" id="file-select-btn" class="btn-link">click to select files</button></p>
+                        <p class="file-types">Supported: .txt, .log, .xml, .json, .csv, .nmap, .scan</p>
+                    </div>
+                    <input type="file" id="file-input" multiple accept=".txt,.log,.xml,.json,.csv,.nmap,.scan" style="display: none;">
+                </div>
+
+                <div id="file-list" class="file-list" style="display: none;">
+                    <h4>Selected Files:</h4>
+                    <ul id="files"></ul>
+                    <div class="upload-actions">
+                        <button id="upload-btn" class="btn btn-primary">Upload & Compile</button>
+                        <button id="clear-btn" class="btn btn-secondary">Clear All</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="progress-section" class="progress-section" style="display: none;">
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+                <p id="progress-text">Uploading files...</p>
+            </div>
+
+            <div id="results-section" class="results-section" style="display: none;">
+                <div class="success-message">
+                    <h3>✅ Files Uploaded Successfully!</h3>
+                    <p>Your scan files have been compiled and are ready for analysis.</p>
+                    <button id="analyze-btn" class="btn btn-success">Start Security Analysis</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
