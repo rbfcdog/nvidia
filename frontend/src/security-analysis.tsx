@@ -1,8 +1,10 @@
 "use client"
 
+import NextLink from 'next/link'; 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Shield, Download, Loader2, User, Building, FileText, Network, Link, Check, AlertCircle, Lock } from 'lucide-react'
+import { Shield, Download, Loader2, User, Building, FileText, Network, LinkIcon, Check, AlertCircle, Lock } from 'lucide-react'
+
 
 // Form data type
 interface FormData {
@@ -194,7 +196,7 @@ export default function SecurityAnalysis() {
       id: 'systemURL',
       label: 'URL do Sistema Web',
       placeholder: 'https://exemplo.com',
-      icon: Link,
+      icon: LinkIcon,
       type: 'url'
     }
   ]
@@ -202,12 +204,12 @@ export default function SecurityAnalysis() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white relative overflow-hidden">
       {/* Subtle noise texture overlay */}
-      <div 
-        className="absolute inset-0 opacity-[0.015] pointer-events-none"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-        }}
-      />
+        <div 
+          className="absolute inset-0 opacity-[0.015] pointer-events-none"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+          }}
+        />
 
       <div className="container mx-auto px-4 py-12 max-w-2xl relative z-10">
         {/* Header and Description */}
@@ -217,16 +219,17 @@ export default function SecurityAnalysis() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <div className="flex items-center justify-center mb-6">
-            <Shield className="w-12 h-12 text-green-500 mr-4" />
-            <div className="text-left">
-              <h1 className="text-4xl font-bold text-white mb-2">
-                Simulador de Análise de Segurança
-              </h1>
-              {/* Green accent line */}
-              <div className="h-0.5 bg-gradient-to-r from-green-500 to-transparent w-3/4"></div>
+          <NextLink href="/" className="inline-block group cursor-pointer">
+            <div className="flex items-center justify-center mb-6">
+              <Shield className="w-12 h-12 text-green-500 mr-4 group-hover:opacity-80 transition-opacity" />
+              <div className="text-left">
+                <h1 className="text-4xl font-bold text-white mb-2 group-hover:text-gray-200 transition-colors">
+                  Simulador de Análise de Segurança
+                </h1>
+                <div className="h-0.5 bg-gradient-to-r from-green-500 to-transparent w-3/4"></div>
+              </div>
             </div>
-          </div>
+          </NextLink>
           
           <p className="text-gray-400 text-lg leading-relaxed max-w-3xl mx-auto">
             Preencha os dados abaixo para iniciar uma análise de vulnerabilidades no seu sistema. 
