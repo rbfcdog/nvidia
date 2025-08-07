@@ -101,16 +101,56 @@ export default function SecurityAnalysis() {
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    
-    // Start loading state
-    setFormState('loading')
-    
-    // Simulate analysis process (7 seconds)
-    setTimeout(() => {
-      setFormState('finished')
-    }, 60000)
-  }
+    e.preventDefault();
+  
+    // 1. Inicia o estado de carregamento
+    setFormState('loading');
+  
+    // 2. Mapeia os dados do formulário para o formato do backend (snake_case)
+    const payload = {
+      employee_name: formData.employeeName,
+      company_name: formData.companyName,
+      cnpj: formData.cnpj.replace(/\D/g, ''), // Envia apenas os números do CNPJ
+      ip: formData.targetIP,
+      url: formData.systemURL
+    };
+  
+    // 3. Usa try...catch para lidar com sucesso e erros na requisição
+    try {
+      // simulação fake só para testar
+      console.log("Simulando requisição para o backend com os seguintes dados:", payload);
+      await new Promise(resolve => setTimeout(resolve, 3000)); 
+      const fakeData = { scan_id: "sim-scan-id-12345-abcde" };
+      console.log("Simulação bem-sucedida! Scan ID:", fakeData.scan_id);
+      setFormState('finished');
+
+      /* fetch ORIGINAL ABAIXO
+      const response = await fetch("/api/v1/submit-form", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+  
+      // Verifica se a resposta do servidor não foi um erro (ex: 404, 500)
+      if (!response.ok) {
+        throw new Error(`Erro na requisição: ${response.statusText}`);
+      }
+  
+      const data = await response.json();
+      console.log("Análise iniciada com sucesso! Scan ID:", data.scan_id);
+  
+      // 4. Se a requisição foi um sucesso, muda o estado para 'finished'
+      setFormState('finished');
+      */
+  
+    } catch (error) {
+      console.error("Falha ao enviar o formulário:", error);
+      // Opcional: Mostre uma mensagem de erro para o usuário
+      alert("Ocorreu um erro ao iniciar a análise. Tente novamente.");
+      // 5. Se deu erro, volta para o estado inicial para o usuário tentar de novo
+      setFormState('initial');
+    }
+  };
 
   const handleDownload = () => {
     // Simulate report download
@@ -368,30 +408,6 @@ export default function SecurityAnalysis() {
             </motion.div>
           )}
         </motion.div>
-
-        {/* Progress Indicator */}
-        {formState === 'loading' && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="mt-8"
-          >
-            <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-4 shadow-md">
-              <div className="flex justify-between text-sm text-gray-400 mb-2">
-                <span>Progresso da Análise</span>
-                <span>Executando...</span>
-              </div>
-              <div className="w-full bg-gray-700 rounded-full h-2">
-                <motion.div
-                  className="bg-gradient-to-r from-green-500 to-green-400 h-2 rounded-full shadow-sm"
-                  initial={{ width: "0%" }}
-                  animate={{ width: "100%" }}
-                  transition={{ duration: 60, ease: "easeInOut" }}
-                />
-              </div>
-            </div>
-          </motion.div>
-        )}
       </div>
 
       {/* Fixed Footer */}
