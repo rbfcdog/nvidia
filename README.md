@@ -7,16 +7,20 @@ Este projeto demonstra como usar o CrewAI para criar e coordenar múltiplos agen
 ## Estrutura do Projeto
 
 ```
-nvidia/
-├── .env # Variáveis de ambiente (chaves de API)
-├── llm_config.py # Configuração LLM para a API NVIDIA
-├── agents.py # Definições dos agentes
-├── tasks.py # Definições das tarefas
-├── crew_main.py # Fluxo de trabalho principal da equipe (crew)
-├── examples.py # Implementações de exemplo
-├── allan/
-│ └── chamada_api.py # Exemplo original de chamada de API NVIDIA
-└── README.md # Este arquivo
+├── allan
+│   ├── chamada_api.py
+│   └── exemplo_1_sonnet
+│       ├── .env # Variáveis de ambiente (chaves de API)
+│       ├── agents.py # Definições dos agentes
+│       ├── crew_main.py # Fluxo de trabalho principal da equipe (crew)
+│       ├── examples.py # Implementações de exemplo
+│       ├── llm_config.py # Configuração LLM para a API NVIDIA
+│       ├── quick_demo.py
+│       ├── requirements.txt
+│       ├── simple_working_example.py
+│       ├── tasks.py # Definições das tarefas
+│       └── test_setup.py
+└── README.md
 ```
 
 -----

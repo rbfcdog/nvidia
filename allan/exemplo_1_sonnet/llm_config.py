@@ -12,7 +12,7 @@ def get_nvidia_llm():
     
     # CrewAI's LLM class with custom configuration
     return LLM(
-        model="openai/gpt-3.5-turbo",  # Using a supported model format for now
+        model="meta/llama-4-maverick-17b-128e-instruct",  # Using a supported model format for now
         api_key=os.getenv("NVIDIA_API_KEY"),
         base_url=os.getenv("NVIDIA_BASE_URL"),
         temperature=0.7,
