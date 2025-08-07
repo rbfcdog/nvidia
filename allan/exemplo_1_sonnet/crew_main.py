@@ -23,7 +23,7 @@ def create_content_crew(topic):
         agents=[research_agent, content_creator_agent, qa_agent, project_manager_agent],
         tasks=[research_task, content_task, qa_task, pm_task],
         process=Process.sequential,  # Tasks will be executed in sequence
-        verbose=2  # Maximum verbosity for detailed output
+        verbose=True  # Maximum verbosity for detailed output
     )
     
     return crew
