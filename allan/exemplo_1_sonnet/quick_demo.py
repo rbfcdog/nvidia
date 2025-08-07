@@ -26,7 +26,7 @@ def quick_demo():
     
     # Create a simple task
     demo_task = Task(
-        description="Explain what CrewAI is in 2-3 sentences. Be concise and clear.",
+        description="Qual o nome do melhor jogador de futebol de todos os tempos ?",
         agent=demo_agent,
         expected_output="A brief, clear explanation of CrewAI"
     )

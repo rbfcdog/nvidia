@@ -12,11 +12,11 @@ def get_nvidia_llm():
     
     # CrewAI's LLM class with custom configuration
     return LLM(
-        model="meta/llama-4-maverick-17b-128e-instruct",  # Using a supported model format for now
+        model="nvidia/llama-3.3-nemotron-super-49b-v1.5",  # Using a supported model format for now
         api_key=os.getenv("NVIDIA_API_KEY"),
         base_url=os.getenv("NVIDIA_BASE_URL"),
         temperature=0.7,
-        max_tokens=1024
+        max_tokens=256
     )
 
 def get_nvidia_custom_llm():
@@ -27,7 +27,7 @@ def get_nvidia_custom_llm():
         def __init__(self):
             self.api_key = os.getenv("NVIDIA_API_KEY")
             self.base_url = os.getenv("NVIDIA_BASE_URL")
-            self.model = "meta/llama-4-maverick-17b-128e-instruct"
+            self.model = "nvidia/llama-3.3-nemotron-super-49b-v1.5"
             
         def __call__(self, prompt, **kwargs):
             return self.generate(prompt, **kwargs)

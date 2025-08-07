@@ -18,7 +18,7 @@ class SimpleNvidiaLLM:
     def __init__(self):
         self.api_key = os.getenv("NVIDIA_API_KEY")
         self.base_url = os.getenv("NVIDIA_BASE_URL")
-        self.model = "meta/llama-4-maverick-17b-128e-instruct"
+        self.model = "nvidia/llama-3.3-nemotron-super-49b-v1.5"
     
     def __call__(self, messages, **kwargs):
         """Make this callable like CrewAI expects"""

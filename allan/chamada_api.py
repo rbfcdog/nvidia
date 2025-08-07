@@ -11,7 +11,7 @@ headers = {
 }
 
 payload = {
-  "model": "meta/llama-4-maverick-17b-128e-instruct",
+  "model": "nvidia/llama-3.3-nemotron-super-49b-v1.5",
   "messages": [{"role":"user","content":"Qual o nome do 1º presidente do Brasil ?"}],
   "max_tokens": 512,
   "temperature": 1.00,
