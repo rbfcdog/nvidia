@@ -261,11 +261,9 @@ def start_analysis(session_id):
     # Start analysis in background
     analysis_status[session_id] = {'status': 'starting', 'progress': 0}
     
-    run_security_analysis(session_id, )
-
-    # thread = threading.Thread(target=run_security_analysis, args=(session_id,))
-    # thread.daemon = True
-    # thread.start()
+    thread = threading.Thread(target=run_security_analysis, args=(session_id,))
+    thread.daemon = True
+    thread.start()
     
     return jsonify({'message': 'Analysis started', 'session_id': session_id})
 
